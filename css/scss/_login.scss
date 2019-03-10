@@ -1,0 +1,135 @@
+#login {
+	background:url(../images/login-background.jpg) no-repeat top left;
+	background-size:100% auto;
+	background-attachment:fixed;
+	& .page {
+		transition:all 0.3s linear;
+		width:574px;
+		padding:0 0 60px 0;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-top:-185px;
+		margin-left:-287px;
+		background:$white;
+		@include rounder-corners();
+		border-bottom:solid 2px $black;
+		@include animation(pop_in, 0.8s, ease-in-out)
+	}
+	& .heading {
+		position:relative;
+		text-align:center;
+		font-size:18px;
+		font-weight:normal;
+		text-transform:uppercase;
+		color:$white;
+		background:$black;
+		width:100%;
+		padding:18px 0 37px 0;
+		margin:0 0 55px 0;
+		@include rounder-corners-top();
+		&:before {
+			@include border-radius(50%);
+			border:solid 5px $white;
+			background:$primary;
+			position:absolute;
+			width:60px;
+			font-size:20px;
+			color:$white;
+			font-weight:normal;
+			padding:11px 0;
+			text-align:center;
+			display:block;
+			margin-left:-27px;
+			margin-top:-27px;
+			left:50%;
+			top:100%;
+		}
+	}
+	& .content {
+		padding:0 90px;
+	}
+	& .textfield {
+		margin:0 0 10px 0;
+		width:100%;
+		& *, & *:before, & *:after {
+			@include transition(all, 0.2s, linear);
+		}
+		&:after {
+			@include clear();
+		}
+		& input[type="text"], & input[type="password"] {
+			@include rounder-corners-left();
+			background:$off_white;
+			float:left;
+			padding:8px 15px;
+			&:valid {
+				background:rgba($dark_green, 0.1);
+			}
+			&:valid + span:before {
+				background:$green;
+				content:"\f00c";
+			}
+		}
+		& span:before {
+			float:right;
+			display:block;
+			text-align:center;
+			width:35px;
+			padding:6px 0 5px 0;
+			@include rounder-corners-right();
+			color:$white;
+			background:$primary;
+			font-size:18px;
+		}
+	}
+	& .error {
+		color:$red;
+		font-style:italic;
+		margin:-5px 0 5px 0;
+		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	}
+	& .buttons {
+		margin:0;
+		padding:0;
+		& button {
+			background:$black;
+			color:$white;
+			text-transform:uppercase;
+			@include rounder-corners();
+			padding:10px 15px;
+			float:left;
+			margin-right:15px;
+			&:hover {
+				background:$primary;
+			}
+			&:before {
+				font-size:18px;
+				line-height:18px;
+				float:left;
+				margin-right:9px;
+				margin-top:1px;
+			}
+		}
+		& a {
+			text-decoration:none;
+			color:$black;
+			margin-top:10px;
+			display:inline-block;
+			&:hover {
+				text-decoration:underline;
+			}
+		}
+		&:after {
+			@include clear();
+		}
+	}
+}
+@keyframes pop_in {
+	from {
+		top:-100%;
+	}
+	to {
+		top:50%;
+	}
+}

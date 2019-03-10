@@ -1,0 +1,22 @@
+.ui-autocomplete {
+	background-color: $white;
+	border: solid 1px $lighter_grey;
+	& .ui-menu-item {
+		padding: 5px 15px;
+		border-bottom: solid 1px $lighter_grey;
+		@include transition(all, 0.2s, linear);
+		&:last-child {
+			border-bottom: none;
+		}
+		&:hover, &.ui-state-focus {
+			color: $primary;
+			margin: 0;
+		}
+	}
+}
+.portlet-placeholder {
+	@include border-radius(5px);
+  	border: 1px dotted $black;
+  	margin: 0 0 24px 0;
+  	height: 50px;
+}

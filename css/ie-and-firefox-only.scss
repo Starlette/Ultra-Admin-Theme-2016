@@ -1,0 +1,21 @@
+.ie, .ie7 {
+	& #search {
+		& input[type="text"] {
+			padding:10px 15px 13px 15px;
+		}
+		& .search_button {
+			padding:8px 0 8px 0;
+		}
+		& .search_categories {
+			padding:7px 0 7px 0;
+		}
+	}
+}
+.gecko #search {
+	& .search_button {
+		padding:6px 0 7px 0;
+	}
+	& .search_categories {
+		padding:7px 0 7px 0;
+	}
+}

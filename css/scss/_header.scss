@@ -1,0 +1,236 @@
+header {
+	background:$black;
+	padding:10px 12px 10px 10px;
+	& #logo {
+		width:260px;
+		display:block;
+		float:left;
+		img {
+			width:auto;
+			height:auto;
+			max-width:260px;
+			max-height:40px;
+		}
+	}
+	&:after {
+		@include clear();
+	}
+	& #menu_toggle {
+		font-size:24px;
+		line-height:24px;
+		background:$primary;
+		color:$white;
+		display:block;
+		float:left;
+		width:50px;
+		text-align:center;
+		padding:8px 0 7px 0;
+		font-weight:normal;
+		@include rounder-corners();
+		&.closed {
+			background:$dark_grey;
+		}
+		&:hover {
+			text-decoration:none;
+			background:$darker_grey;
+		}
+	}
+	#search {
+		@include rounder-corners();
+		float:left;
+		margin-left:10px;
+		padding-bottom:10px;
+		margin-bottom:-10px;
+		position:relative;
+		& .search_categories_value, .search_categories_dropdown {
+			display:none;
+		}
+		& .search_categories_dropdown, & .search_categories_dropdown li {
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		& input[type="text"] {
+			@include rounder-corners-left();
+			background:$grey; //was light grey
+			width:250px;
+			padding:10px 15px;
+			float:left;
+		}
+		& input::-webkit-input-placeholder {
+		   color:$black;
+		   opacity:1;
+		}
+		& input::-moz-placeholder {
+		   color:$black;
+		   opacity:1;
+		}
+		& input:-moz-placeholder {
+		   color:$black;
+		   opacity:1;
+		}
+		& .search_categories {
+			float:left;
+			width:30px;
+			padding:7px 0 8px 0;
+			text-align:center;
+			background:$white;
+			color:$dark_grey;
+			font-size:18px;
+			&:hover {
+				background:$darker_off_white;
+				color:$black;
+				text-decoration:none;
+			}
+			&:before {
+				display:inline-block;
+			}
+		}
+		& .search_button {
+			float:right;
+			font-size:24px;
+			line-height:24px;
+			background:$primary;
+			color:$white;
+			display:block;
+			width:50px;
+			text-align:center;
+			padding:7px 0 8px 0;
+			font-weight:normal;
+			@include rounder-corners-right();
+			&:hover {
+				text-decoration:none;
+				background:$dark_grey;
+			}
+		}
+		& .search_categories_dropdown {
+			@include dropdown();
+		}
+		&.active .search_categories:before {
+			transform:rotate(180deg);
+		}
+		& .tip {
+			display: none!important;
+		}
+	}
+	& #user_details {
+		max-height:40px;
+		display:block;
+		overflow:hidden;
+		font-size:16px;
+		color:$light_grey;
+		line-height:38px;
+		background-color:$dark_grey;
+		@include rounder-corners();
+		& img {
+			@include rounder-corners-left();
+			margin-right:15px;
+			display:block;
+			height:auto;
+			width:50px;
+			float:left;
+		}
+		&:before {
+			float:right;
+			font-size:18px;
+			line-height:18px;
+			color:$white;
+			opacity:0.7;
+			display:inline-block;
+			margin:10px 15px 0 15px;
+		}
+		&.active:before {
+			transform:rotate(180deg);
+		}
+		&:hover, &.active {
+			text-decoration:none;
+			background:$primary;
+			opacity:1;
+			color:$white;
+			&:before {
+				opacity:1;
+			}
+			& img {
+				opacity:0.8;
+			}
+		}
+	}
+	& .user_dropdown, & .notifications_dropdown {
+		position:relative;
+		float:right;
+		padding-bottom:10px;
+		margin-bottom:-10px;
+		& ul {
+			@include dropdown();
+			max-width:174px;
+		}
+		& a {
+			text-overflow:ellipsis;
+			white-space: nowrap;
+			overflow:hidden;
+		}
+	}
+	& .header_btn {
+		float:right;
+		margin-left:10px;
+		@include rounder-corners();
+		background-color:$dark_grey;
+		width:50px;
+		height:40px;
+		padding:0;
+		display:block;
+		font-size:16px;
+		color:$light_grey;
+		text-align:center;
+		position:relative;
+		&:before {
+			float:right;
+			font-size:18px;
+			color:$white;
+			opacity:0.7;
+			display:inline-block;
+			margin:11px 16px 0 0;
+		}
+		& span {
+			width:20px;
+			height:18px;
+			padding:2px 0 0 0;
+			background:#D90000;
+			text-align:center;
+			font-size:12px;
+			font-weight:bold;
+			color:$white;
+			@include border-radius(50%);
+			position:absolute;
+			top:2px;
+			right:6px;
+			display:block;
+		}
+		&:hover, &.active {
+			text-decoration:none;
+			color:$white;
+			background:$primary;
+			&:before {
+				opacity:1;
+			}
+			& span {
+				background:#222222;
+			}
+		}
+	}
+	
+	& .notifications_dropdown {
+		position: static;
+		& ul {
+			@include transition(all, 0.0s, linear);
+			height: calc(100% - 120px);
+			border-bottom: none;
+			display: block;
+			max-width: 300px;
+			right: 0;
+			display: none;
+			z-index: 999;
+			top: 60px;
+		}
+	}
+}

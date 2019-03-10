@@ -1,0 +1,6 @@
+.ie #search input[type="text"], .ie7 #search input[type="text"] { padding: 10px 15px 13px 15px; }
+.ie #search .search_button, .ie7 #search .search_button { padding: 8px 0 8px 0; }
+.ie #search .search_categories, .ie7 #search .search_categories { padding: 7px 0 7px 0; }
+
+.gecko #search .search_button { padding: 6px 0 7px 0; }
+.gecko #search .search_categories { padding: 7px 0 7px 0; }
